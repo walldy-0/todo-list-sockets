@@ -1,4 +1,13 @@
+import { useState, useEffect } from 'react';
+import io from 'socket.io-client';
+
 const App = () => {
+  const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <div className="App">
   
