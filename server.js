@@ -1,7 +1,7 @@
 const express = require('express');
 const socket = require('socket.io');
 
-const tasks = [];
+const tasks = [{ id: '1', name: 'Shopping' }, { id: '2', name: 'Go out with a dog' }];
 
 const app = express();
 
@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   socket.on('removeTask', (taskId) => {
     const indexToRemove = tasks.findIndex(task => task.id === taskId);
     if (indexToRemove > -1) {
-      users.splice(indexToRemove, 1);
+      tasks.splice(indexToRemove, 1);
       socket.broadcast.emit('removeTask', taskId);
     }
   });
