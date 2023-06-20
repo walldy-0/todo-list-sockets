@@ -28,9 +28,5 @@ io.on('connection', (socket) => {
       socket.broadcast.emit('removeTask', taskId);
     }
   });
-
-  socket.on('disconnect', () => {
-    
-  });
 });
 
